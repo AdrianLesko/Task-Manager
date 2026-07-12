@@ -15,3 +15,28 @@ body {
 .title {
     text-align: center;
 }
+
+.main-container{
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px #002b53;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    background: rgb(231, 231, 231);
+    height: 40%;
+    margin: 1rem;
+    border-radius: 15px;
+}
+
+.list-container {
+    background: rgb(231, 231, 231);
+    height: 60%;
+    margin: 1rem;
+    border-radius: 15px;
+}

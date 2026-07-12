@@ -13,7 +13,7 @@ export default function TaskForm (props) {
         e.preventDefault()
         const dataObj = {
             title: currentVal,
-            checked: false,
+            completed: false,
         }
         addTask(dataObj)
         setVal('')

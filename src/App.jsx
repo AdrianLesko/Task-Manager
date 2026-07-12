@@ -25,7 +25,7 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <TaskList />
+          <TaskList showTask={dataList} />
         </div>
 
       </div>

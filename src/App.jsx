@@ -14,6 +14,11 @@ function App() {
     setDataList(prev=> [...prev, taskObj])
   }
 
+  const deleteTask = (taskObj) => {
+    console.log(`task "${taskObj.title}" deletion:`)
+    setDataList(prev => prev.filter(task => task.id !== taskObj.id))
+  }
+
   return (
     <>
       <h1 className='title'>Task Manager v01</h1>
@@ -25,7 +30,7 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <TaskList showTask={dataList} />
+          <TaskList deleteTask={deleteTask} dataList={dataList}/>
         </div>
 
       </div>

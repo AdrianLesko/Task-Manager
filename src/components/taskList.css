@@ -1,9 +1,11 @@
-.task-list-container {
-    border: solid red; 
+.task-list-container { 
     width: 95%;
     margin-top: 5px;
     display: flex;
     flex-direction: column;
-    gap:3px;
-    
+    gap:9px;
+    padding-top: 1rem;
+    margin: 0 auto;
+
+  
 }

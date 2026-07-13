@@ -2,14 +2,14 @@ import './taskForm.css'
 import {useState} from 'react'
 
 export default function TaskForm (props) {
-    const addTask = props.addtask
+    const addTask = props.addTask
     const [currentVal, setVal] = useState('')
     const [description, setDescription] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const dataObj = {
-            id: currentVal.toLowerCase().replaceAll(' ', '-'),
+            id: Date.now(),
             title: currentVal,
             description: description,
             completed: false,

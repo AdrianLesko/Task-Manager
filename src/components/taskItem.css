@@ -24,3 +24,7 @@
     min-width: 50px;
     min-height: 15px;
 }
+
+.btns-task-container button:hover{
+    opacity: 90%
+}

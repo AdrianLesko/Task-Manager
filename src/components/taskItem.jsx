@@ -1,6 +1,6 @@
 import './taskItem.css'
 
-function TaskItem ({task, tasks, deleteTask}) {
+function TaskItem ({task, toggleTask, deleteTask}) {
    
 
     return (
@@ -11,8 +11,8 @@ function TaskItem ({task, tasks, deleteTask}) {
                 <h3>{task.completed ? 'completed' : 'not completed'}</h3>
             </div>
             <div className='btns-task-container'>
-                <input type='checkbox'/>
-                <button>Edit</button>
+                <input type='checkbox' onChange={() => toggleTask(task)}/>
+                <button onClick={null}>Edit</button>
                 <button onClick={() => deleteTask(task)}>Delete</button>
             </div>
         </div>

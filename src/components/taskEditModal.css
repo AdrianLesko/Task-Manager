@@ -1,0 +1,8 @@
+#task-edit-modal{
+    border: solid red;
+    position: fixed;
+    overlay: 0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

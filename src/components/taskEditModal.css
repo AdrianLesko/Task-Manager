@@ -1,8 +1,17 @@
 #task-edit-modal{
-    border: solid red;
-    position: fixed;
-    overlay: 0;
-    display:flex;
-    justify-content: center;
-    align-items:center;
+  color:black;
+  position:fixed;
+  inset: 0;
+
+  background: white;;
+  width: 40%;
+  height:60%;
+  margin: auto auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 20px;
+  box-shadow: 5px 2px 4px rgb(204, 204, 204);
 }

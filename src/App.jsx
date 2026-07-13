@@ -6,6 +6,8 @@ import TaskEditModal from './components/taskEditModal.jsx'
 
 function App() {
   const [dataList, setDataList] = useState([])
+  const [taskToEdit, setTaskToEdit] = useState({})
+  const [isEditOpen, setIsEditOpen] = useState(false)
 
   useEffect(() => {
     console.log(dataList)
@@ -26,6 +28,12 @@ function App() {
     console.log(taskObj)
   }
 
+  const editTask = (taskObj) => {
+    setTaskToEdit(taskObj)
+    setIsEditOpen(true)
+    console.log('edit mode opeened', taskToEdit, isEditOpen)
+  }
+
   return (
     <>
       <h1 className='title'>Task Manager v01</h1>
@@ -36,9 +44,10 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <TaskList deleteTask={deleteTask} toggleTask={toggleTask} dataList={dataList}/>
+          <TaskList deleteTask={deleteTask} toggleTask={toggleTask} editTask={editTask} dataList={dataList}/>
         </div>
       </div>
+      <TaskEditModal taskToEdit={taskToEdit} isEditOpen={isEditOpen}/>
     </>
   )
 }

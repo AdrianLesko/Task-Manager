@@ -1,6 +1,6 @@
 import './taskItem.css'
 
-function TaskItem ({task, toggleTask, deleteTask}) {
+function TaskItem ({task, toggleTask, deleteTask, editTask}) {
    
 
     return (
@@ -12,7 +12,7 @@ function TaskItem ({task, toggleTask, deleteTask}) {
             </div>
             <div className='btns-task-container'>
                 <input type='checkbox' onChange={() => toggleTask(task)}/>
-                <button onClick={null}>Edit</button>
+                <button onClick={() => editTask(task)}>Edit</button>
                 <button onClick={() => deleteTask(task)}>Delete</button>
             </div>
         </div>

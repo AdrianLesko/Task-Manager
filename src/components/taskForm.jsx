@@ -3,16 +3,17 @@ import {useState} from 'react'
 
 export default function TaskForm (props) {
     const addTask = props.addTask
+    const isCompleted = props.isCompleted
     const [currentVal, setVal] = useState('')
     const [description, setDescription] = useState('')
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const dataObj = {
             id: Date.now(),
             title: currentVal,
             description: description,
-            completed: false,
+            completed: isCompleted,
         }
         addTask(dataObj)
         setVal('')

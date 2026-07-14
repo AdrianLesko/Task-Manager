@@ -8,6 +8,7 @@ function App() {
   const [dataList, setDataList] = useState([])
   const [taskToEdit, setTaskToEdit] = useState({})
   const [isEditOpen, setIsEditOpen] = useState(false)
+  const [isTaskCompleted, setIsTaskCompleted] = useState(false)
 
   useEffect(() => {
     console.log(dataList)
@@ -40,7 +41,7 @@ function App() {
       <div className='main-container'>
   
         <div className='form-container'>
-          <TaskForm addTask={addTask}/>
+          <TaskForm addTask={addTask} isCompleted={isTaskCompleted}/>
         </div>
 
         <div className='list-container'>

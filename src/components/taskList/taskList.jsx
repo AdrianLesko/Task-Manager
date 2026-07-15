@@ -1,4 +1,4 @@
-import TaskItem from "./taskItem"
+import TaskItem from "../taskItem/taskItem"
 import './taskList.css'
 
 export default function TaskList (props) {

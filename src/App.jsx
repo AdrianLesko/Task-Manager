@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import TaskList from './components/taskList.jsx'
-import TaskForm from './components/taskForm.jsx'
-import TaskEditModal from './components/taskEditModal.jsx'
+import TaskList from './components/taskList/taskList.jsx'
+import TaskForm from './components/taskForm/taskForm.jsx'
+import TaskEditModal from './components/taskEditModal/taskEditModal.jsx'
 
 function App() {
   const [dataList, setDataList] = useState([])

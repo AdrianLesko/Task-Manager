@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 export default function TaskForm (props) {
     const addTask = props.addTask
-    const isCompleted = props.isCompleted
+    const isCompleted = props.isTaskCompleted
     const [currentVal, setVal] = useState('')
     const [description, setDescription] = useState('')
     
@@ -13,7 +13,7 @@ export default function TaskForm (props) {
             id: Date.now(),
             title: currentVal,
             description: description,
-            completed: isCompleted,
+            completed: false,
         }
         addTask(dataObj)
         setVal('')

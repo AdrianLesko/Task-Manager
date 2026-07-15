@@ -24,9 +24,12 @@ function App() {
   }
 
   const toggleTask = (taskObj) => {
-    const isCompleted = taskObj.completed
-    isCompleted ? taskObj.completed = false : taskObj.completed = true
-    console.log(taskObj)
+    setDataList(prev => {
+      return prev.map(task => task.id === taskObj.id 
+        ? {...task, completed: !task.completed}
+        : task
+      )
+    })
   }
 
   const editTask = (taskObj) => {
@@ -35,13 +38,14 @@ function App() {
     console.log('edit mode opeened', taskToEdit, isEditOpen)
   }
 
+
   return (
     <>
       <h1 className='title'>Task Manager v01</h1>
       <div className='main-container'>
   
         <div className='form-container'>
-          <TaskForm addTask={addTask} isCompleted={isTaskCompleted}/>
+          <TaskForm addTask={addTask}/>
         </div>
 
         <div className='list-container'>

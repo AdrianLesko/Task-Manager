@@ -2,18 +2,15 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import TaskList from './components/taskList/taskList.jsx'
 import TaskForm from './components/taskForm/taskForm.jsx'
-import TaskEditModal from './components/taskEditModal/taskEditModal.jsx'
+import EditModal from './components/taskEditModal/editModal.jsx'
 
 function App() {
   const [dataList, setDataList] = useState([])
-  const [taskToEdit, setTaskToEdit] = useState({})
-  const [isEditOpen, setIsEditOpen] = useState(false)
-  const [isTaskCompleted, setIsTaskCompleted] = useState(false)
+  //modals
+  const [taskToEdit, setTaskToEdit] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  useEffect(() => {
-    console.log(dataList)
-  }, [dataList])
-
+  //task manipulation logic
   const addTask = (taskObj) => {
     setDataList(prev=> [...prev, taskObj])
   }
@@ -34,10 +31,28 @@ function App() {
 
   const editTask = (taskObj) => {
     setTaskToEdit(taskObj)
-    setIsEditOpen(true)
-    console.log('edit mode opeened', taskToEdit, isEditOpen)
+    setIsModalOpen(true)
   }
 
+  const handleEditSave = (newTaskObj) => {
+    setDataList(prev => {
+        return prev.map(task => task.id === newTaskObj.id
+          ? newTaskObj
+          : task
+        )
+      }
+    )
+    setIsModalOpen(false)
+    setTaskToEdit(null)
+  }
+
+  const handleEditCancel = () => {
+    setTaskToEdit(null)
+    setIsModalOpen(false)
+  }
+
+
+  
 
   return (
     <>
@@ -49,10 +64,20 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <TaskList deleteTask={deleteTask} toggleTask={toggleTask} editTask={editTask} dataList={dataList}/>
+          <TaskList 
+            deleteTask={deleteTask} 
+            toggleTask={toggleTask} 
+            editTask={editTask} 
+            dataList={dataList}
+          />
         </div>
       </div>
-      <TaskEditModal taskToEdit={taskToEdit} isEditOpen={isEditOpen}/>
+      <EditModal 
+        taskToEdit={taskToEdit}
+        isModalOpen={isModalOpen}
+        handleEditSave={handleEditSave}
+        handleEditCancel={handleEditCancel}
+      />
     </>
   )
 }

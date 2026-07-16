@@ -10,7 +10,15 @@ export default function TaskList (props) {
 
         <div className='task-list-container'>
             {dataList.map((task) => {
-                return <TaskItem task={task} toggleTask={toggleTask} editTask={editTask} deleteTask={deleteTask} key={task.id}  />
+                return (
+                    <TaskItem 
+                        task={task} 
+                        toggleTask={toggleTask} 
+                        editTask={editTask} 
+                        deleteTask={deleteTask}
+                        key={task.id}  
+                    />
+                )
             })}
         </div> 
     )

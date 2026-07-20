@@ -23,9 +23,10 @@ export default function TaskForm (props) {
     return (
         <div className='component'>
             <form onSubmit={handleSubmit}>
+                <h2 className='add-task-title'>Add New Task</h2>
               <input type='text' value={currentVal} onChange={(e) => setVal(e.target.value)} placeholder='Task title...' required/>
               <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='description...'/>
-              <button type='submit'>Add</button>
+              <button type='submit'>Add task</button>
             </form>
         </div>
     )

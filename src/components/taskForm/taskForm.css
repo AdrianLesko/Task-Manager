@@ -1,0 +1,51 @@
+
+.component {
+    height:100%;
+
+    form {
+        height: 100%;
+        display: flex;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+
+        .add-task-title {
+            color: var(--secondary);
+            align-self: start;
+        }
+
+        input {
+            height: 2rem;
+            max-width: 100%;
+            min-width: 60%;
+
+            background: var(--primary);
+            border-radius: 8px;
+            border: 1px solid var(--secondary);
+            color: var(--secondary)
+        }
+
+        button {
+            max-width:40%;
+            min-width:30%;
+            height: 2rem;
+            border: 1px solid var(--secondary);
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+
+            background: var(--primary);
+        }
+
+        button:hover{ 
+            cursor: pointer;
+            background: var(--secondary);
+            color:black;
+        }
+        
+    }
+    
+}
+    

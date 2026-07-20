@@ -1,0 +1,53 @@
+:root {
+    --primary: #333333;
+    --primary-b: #19191967;
+    --secondary: #B2EBD4;
+}
+
+
+#app {
+
+    background: var(--primary);
+    height: 100dvh;
+
+    .title-container{
+        display: flex;
+        justify-content: center;
+        background: var(--primary-b);
+        min-height: 3rem;
+        align-items: center;
+
+        h1{
+            color: var(--secondary);
+        }
+
+    }
+
+    .main-container {
+        
+        max-width: 900px;
+        height: 90dvh;
+        
+        display: flex;
+        flex-direction: column;
+        align-items:center; 
+        margin: auto;
+        margin-top: 4px;
+
+        border-radius: 20px;
+        box-shadow: 0px 4px 12px rgb(0,0,0,0.08);
+
+        background: var(--primary-b);
+
+        .form-container {
+            padding: 4px;
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            width: 98%;
+            margin-top:4px;
+
+            height: 30%;
+            
+        }
+    }
+}

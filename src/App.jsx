@@ -55,8 +55,10 @@ function App() {
   
 
   return (
-    <>
-      <h1 className='title'>Task Manager v01</h1>
+    <div id='app'>
+      <div className='title-container'>
+        <h1 className='title'>Task Manager v01</h1>
+      </div>
       <div className='main-container'>
   
         <div className='form-container'>
@@ -78,7 +80,7 @@ function App() {
         handleEditSave={handleEditSave}
         handleEditCancel={handleEditCancel}
       />
-    </>
+    </div>
   )
 }
 

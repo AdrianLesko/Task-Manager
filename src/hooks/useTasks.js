@@ -13,7 +13,11 @@ export default function useTasks () {
     const addTask = (taskObj) => {
         setTasks(prev=> [...prev, taskObj])
     }
+
+    const deleteTask = (taskObj) => {
+        setTasks(prev => prev.filter(task => task.id !== taskObj.id))
+    }
    
 
-    return {tasks, addTask}
+    return {tasks, addTask, deleteTask}
 }

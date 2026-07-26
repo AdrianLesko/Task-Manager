@@ -7,16 +7,9 @@ import useTasks from './hooks/useTasks.js'
 
 function App() {
 
-  const {tasks, addTask} = useTasks()
+  const {tasks, addTask,deleteTask} = useTasks()
 
-  const [dataList, setDataList] = useState(() => {
-    try {
-      const savedTasks = localStorage.getItem('tasks')
-      return savedTasks ? JSON.parse(savedTasks) : []
-    } catch {
-      return []
-    }
-  })
+  
   //modals
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)

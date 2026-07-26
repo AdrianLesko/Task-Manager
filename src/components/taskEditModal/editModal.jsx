@@ -31,7 +31,7 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
             <div id='edit-modal'>
                 <form onSubmit={handleSubmit}>
                     <h2>Edit <span id="title-to-edit">'{taskToEdit.title}'</span></h2>
-                    <div className='edit-title-container'>
+                    <div className='edit-title-container edit-box'>
                         <h3>Edit Title</h3>
                         <input 
                             type='text'
@@ -41,7 +41,7 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
                         />
                     </div>
 
-                    <div className='edit-description-container'>
+                    <div className='edit-description-container edit-box'>
                         <h3>Edit Description</h3>
                         <input
                             type='text'

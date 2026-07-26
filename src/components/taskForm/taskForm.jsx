@@ -29,7 +29,7 @@ export default function TaskForm (props) {
                     <span class='placeholder'>Enter Title</span>
                 </label>
                 <label class='input-box'>
-                    <input type='text' value={description} onChange={(e) => setDescription(e.target.value)}/>
+                    <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} required/>
                     <span class='placeholder'>Enter Description</span>
                 </label>
               <button type='submit'>Add task</button>

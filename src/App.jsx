@@ -74,12 +74,14 @@ function App() {
           />
         </div>
       </div>
-      <EditModal 
-        taskToEdit={taskToEdit}
-        isModalOpen={isModalOpen}
-        handleEditSave={handleEditSave}
-        handleEditCancel={handleEditCancel}
-      />
+      <div id='edit-task-modal'>
+        <EditModal 
+          taskToEdit={taskToEdit}
+          isModalOpen={isModalOpen}
+          handleEditSave={handleEditSave}
+          handleEditCancel={handleEditCancel}
+        />
+      </div>
     </div>
   )
 }

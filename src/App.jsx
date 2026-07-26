@@ -3,8 +3,12 @@ import './App.css'
 import TaskList from './components/taskList/taskList.jsx'
 import TaskForm from './components/taskForm/taskForm.jsx'
 import EditModal from './components/taskEditModal/editModal.jsx'
+import useTasks from './hooks/useTasks.js'
 
 function App() {
+
+  const {tasks, addTask} = useTasks()
+
   const [dataList, setDataList] = useState(() => {
     try {
       const savedTasks = localStorage.getItem('tasks')
@@ -25,10 +29,6 @@ function App() {
   }, [dataList])
 
 
-  //task manipulation logic
-  const addTask = (taskObj) => {
-    setDataList(prev=> [...prev, taskObj])
-  }
 
   const deleteTask = (taskObj) => {
     console.log(`task "${taskObj.title}" deletion:`)

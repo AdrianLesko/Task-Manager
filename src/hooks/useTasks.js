@@ -10,8 +10,10 @@ export default function useTasks () {
         }
     })
     
-
+    const addTask = (taskObj) => {
+        setTasks(prev=> [...prev, taskObj])
+    }
    
 
-    return {tasks}
+    return {tasks, addTask}
 }

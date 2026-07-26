@@ -18,6 +18,24 @@ export default function useTasks () {
         setTasks(prev => prev.filter(task => task.id !== taskObj.id))
     }
    
+    const toggleTask = (taskObj) => {
+        setTasks(prev => {
+        return prev.map(task => task.id === taskObj.id 
+            ? {...task, completed: !task.completed}
+            : task
+        )
+        })
+    }
 
-    return {tasks, addTask, deleteTask}
+    const updateTask = (newTask) => {
+        setTasks(prev => {
+            return prev.map(task => task.id === newTaskObj.id
+            ? newTaskObj
+            : task
+            )
+            }   
+        )
+    }
+
+    return {tasks, addTask, deleteTask, toggleTask, updateTask}
 }

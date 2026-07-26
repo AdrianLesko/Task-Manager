@@ -7,7 +7,7 @@ import useTasks from './hooks/useTasks.js'
 
 function App() {
 
-  const {tasks, addTask,deleteTask} = useTasks()
+  const {tasks, addTask,deleteTask, toggleTask, updateTask} = useTasks()
 
   
   //modals
@@ -22,34 +22,13 @@ function App() {
   }, [dataList])
 
 
-
-  const deleteTask = (taskObj) => {
-    console.log(`task "${taskObj.title}" deletion:`)
-    setDataList(prev => prev.filter(task => task.id !== taskObj.id))
-  }
-
-  const toggleTask = (taskObj) => {
-    setDataList(prev => {
-      return prev.map(task => task.id === taskObj.id 
-        ? {...task, completed: !task.completed}
-        : task
-      )
-    })
-  }
-
   const editTask = (taskObj) => {
     setTaskToEdit(taskObj)
     setIsModalOpen(true)
   }
 
-  const handleEditSave = (newTaskObj) => {
-    setDataList(prev => {
-        return prev.map(task => task.id === newTaskObj.id
-          ? newTaskObj
-          : task
-        )
-      }
-    )
+  const handleEditSave = (newTask) => {
+    updateTask(newTask)
     setIsModalOpen(false)
     setTaskToEdit(null)
   }

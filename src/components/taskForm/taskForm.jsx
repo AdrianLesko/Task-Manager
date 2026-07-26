@@ -24,13 +24,13 @@ export default function TaskForm (props) {
         <div className='component'>
             <form onSubmit={handleSubmit}>
                 <h2 className='add-task-title'>Add New Task</h2>
-                <label class='input-box'>
+                <label className='input-box'>
                     <input type='text' value={currentVal} onChange={(e) => setVal(e.target.value)} required/>
-                    <span class='placeholder'>Enter Title</span>
+                    <span className='placeholder'>Enter Title</span>
                 </label>
-                <label class='input-box'>
+                <label className='input-box'>
                     <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} required/>
-                    <span class='placeholder'>Enter Description</span>
+                    <span className='placeholder'>Enter Description</span>
                 </label>
               <button type='submit'>Add task</button>
             </form>

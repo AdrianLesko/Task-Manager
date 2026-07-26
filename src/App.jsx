@@ -1,14 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import TaskList from './components/taskList/taskList.jsx'
 import TaskForm from './components/taskForm/taskForm.jsx'
 import EditModal from './components/taskEditModal/editModal.jsx'
 
 function App() {
-  const [dataList, setDataList] = useState([])
+  const [dataList, setDataList] = useState(() => {
+    try {
+      const savedTasks = localStorage.getItem('tasks')
+      return savedTasks ? JSON.parse(savedTasks) : []
+    } catch {
+      return []
+    }
+  })
   //modals
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const isInitialContentLoaded = useRef(false)
+
+
+  // local storage updater 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(dataList))
+  }, [dataList])
+
 
   //task manipulation logic
   const addTask = (taskObj) => {

@@ -2,6 +2,7 @@
     background: white;
     width: 36dvw; 
     height: 70dvh;
+    min-width: 550px;
 
     border-radius: 24px;
     padding: 1rem;

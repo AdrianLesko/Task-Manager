@@ -46,7 +46,7 @@ function App() {
             deleteTask={deleteTask} 
             toggleTask={toggleTask} 
             editTask={editTask} 
-            dataList={dataList}
+            tasks={tasks}
           />
         </div>
       </div>

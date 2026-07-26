@@ -3,13 +3,13 @@ import './taskList.css'
 
 export default function TaskList (props) {
     const deleteTask = props.deleteTask
-    const dataList = props.dataList
+    const tasks = props.tasks
     const toggleTask = props.toggleTask
     const editTask = props.editTask
     return (
 
         <div className='task-list-container'>
-            {dataList.map((task) => {
+            {tasks.map((task) => {
                 return (
                     <TaskItem 
                         task={task} 

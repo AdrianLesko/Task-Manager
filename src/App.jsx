@@ -9,17 +9,9 @@ function App() {
 
   const {tasks, addTask,deleteTask, toggleTask, updateTask} = useTasks()
 
-  
   //modals
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const isInitialContentLoaded = useRef(false)
-
-
-  // local storage updater 
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(dataList))
-  }, [dataList])
 
 
   const editTask = (taskObj) => {
@@ -37,9 +29,6 @@ function App() {
     setTaskToEdit(null)
     setIsModalOpen(false)
   }
-
-
-  
 
   return (
     <div id='app'>

@@ -59,6 +59,7 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
                             Save Changes
                         </button>
                         <button 
+                            type='button'
                             id='cancel-button'
                             onClick={handleCancel}
                         >

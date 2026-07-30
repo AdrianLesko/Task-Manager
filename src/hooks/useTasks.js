@@ -35,7 +35,7 @@ export default function useTasks () {
     const updateTask = (newTask) => {
       setTasks((prev) => {
         return prev.map((task) =>
-          task.id === newTaskObj.id ? newTaskObj : task,
+          task.id === newTask.id ? newTask : task,
         )
       })
     }

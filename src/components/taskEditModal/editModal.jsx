@@ -6,6 +6,7 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
 
     const [newTitle, setNewTitle] = useState('')
     const [newDescription, setNewDescription] = useState('')
+    const [newPriority, setNewPriority] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -13,7 +14,8 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
             id: taskToEdit.id,
             title: newTitle,
             description: newDescription,
-            completed: taskToEdit.completed
+            completed: taskToEdit.completed,
+            priority: newPriority
         }
         handleEditSave(newTaskObj)
         setNewTitle('')
@@ -49,6 +51,15 @@ function EditModal ({taskToEdit, isModalOpen, handleEditSave, handleEditCancel})
                             value={newDescription}
                             onChange={(e) => setNewDescription(e.target.value)}
                         />
+                    </div>
+
+                    <div className='priority-container edit-box'>
+                        <h3>Edit priority</h3>
+                        <select value={newPriority} onChange={(e) => setNewPriority(e.target.value)}>
+                            <option value='common'>Common</option>
+                            <option value='medium'>Medium</option>
+                            <option value='high'>High</option>
+                        </select>
                     </div>
 
                     <div id='button-container'>

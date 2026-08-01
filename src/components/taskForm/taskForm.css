@@ -11,6 +11,10 @@
         align-items: center;
         gap: 10px;
 
+        label {
+            color: var(--secondary)
+        }
+
         .add-task-title {
             color: var(--secondary);
             align-self: start;

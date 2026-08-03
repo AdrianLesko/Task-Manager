@@ -4,6 +4,7 @@ import TaskList from './components/taskList/taskList.jsx'
 import TaskForm from './components/taskForm/taskForm.jsx'
 import EditModal from './components/taskEditModal/editModal.jsx'
 import useTasks from './hooks/useTasks.js'
+import Filter from './components/filter/filter.jsx'
 
 function App() {
 
@@ -13,7 +14,14 @@ function App() {
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  //filter 
+  const [filterValue, setFilterValue] = useState('all')
+  const handleFilterChange = (value) => {
+    setFilterValue(value)
+    console.log(value)
+  }
 
+  //edit task + edit modal // useEdit.js later
   const editTask = (taskObj) => {
     setTaskToEdit(taskObj)
     setIsModalOpen(true)
@@ -41,12 +49,17 @@ function App() {
           <TaskForm addTask={addTask}/>
         </div>
 
+        <div className='filter-container'>
+            <Filter filterValue={filterValue} handleFilterChange={handleFilterChange} />
+        </div>
+
         <div className='list-container'>
           <TaskList 
             deleteTask={deleteTask} 
             toggleTask={toggleTask} 
             editTask={editTask} 
             tasks={tasks}
+            filterValue={filterValue}
           />
         </div>
       </div>

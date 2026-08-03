@@ -7,8 +7,33 @@ export default function TaskList (props) {
     const toggleTask = props.toggleTask
     const editTask = props.editTask
     const filterValue = props.filterValue
+    const sortingValue = props.sortingValue
 
-    const filteredTasks = [...tasks].filter(task => {
+    const sortTasks = (tasks) => {
+        const sortedTasks = [...tasks]
+
+        switch (sortingValue) {
+            case "latest" : {
+                return sortedTasks
+            };
+
+            case "completed-first" : {
+                const completed = []
+                const notCompleted = []
+
+                sortedTasks.forEach(task => {
+                    task.completed ? completed.push(task) : notCompleted.push(task)
+                })
+
+                return completed.concat(notCompleted)
+            };
+
+            
+        }   
+    }
+
+
+    const filteredTasks = tasks.filter(task => {
         if (filterValue === 'completed') {
             return task.completed === true
         }
@@ -18,10 +43,12 @@ export default function TaskList (props) {
         return true
     })
 
+    const sortedFilteredTasks = sortTasks(filteredTasks)
+
     return (
 
             <div className='task-list-container'>
-                {filteredTasks.map((task) => {
+                {sortedFilteredTasks.map((task) => {
                     return (
                         <TaskItem 
                             task={task} 

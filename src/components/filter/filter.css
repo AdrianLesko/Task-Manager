@@ -2,7 +2,21 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items:center;
     gap: 15px;
     width: 90%;
+    margin-top: 4px;
+    margin-bottom: 4px;
    
+
+    .icon-box {
+        background-color: white;
+        border-radius: 4px;
+        padding: 2px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

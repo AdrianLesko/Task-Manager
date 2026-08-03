@@ -21,6 +21,13 @@ function App() {
     console.log(value)
   }
 
+  //sort
+  const [sortingValue, setSortingValue] = useState('latest')
+  const handleSortChange = (value) => {
+    setSortingValue(value)
+    console.log(value)
+  }
+
   //edit task + edit modal // useEdit.js later
   const editTask = (taskObj) => {
     setTaskToEdit(taskObj)
@@ -50,7 +57,12 @@ function App() {
         </div>
 
         <div className='filter-container'>
-            <Filter filterValue={filterValue} handleFilterChange={handleFilterChange} />
+            <Filter 
+              filterValue={filterValue} 
+              handleFilterChange={handleFilterChange} 
+              sortingValue={sortingValue}
+              handleSortChange={handleSortChange}
+            />
         </div>
 
         <div className='list-container'>
@@ -60,6 +72,7 @@ function App() {
             editTask={editTask} 
             tasks={tasks}
             filterValue={filterValue}
+            sortingValue={sortingValue}
           />
         </div>
       </div>

@@ -8,10 +8,12 @@ export default function TaskList (props) {
     const editTask = props.editTask
     const filterValue = props.filterValue
     const sortingValue = props.sortingValue
+   
 
-    const sortTasks = (tasks) => {
+    const sortTasks = (tasks, sortingValue) => {
         const sortedTasks = [...tasks]
-
+        
+        
         switch (sortingValue) {
             case "latest" : {
                 return sortedTasks
@@ -28,7 +30,26 @@ export default function TaskList (props) {
                 return completed.concat(notCompleted)
             };
 
-            
+            case "priority" : {
+                const high = []
+                const medium = []
+                const common = []
+
+                sortedTasks.forEach(task => {
+                    if (task.priority === 'high') {
+                        high.push(task)
+                    } else if (task.priority === 'medium') {
+                        medium.push(task)
+                    } else {
+                        common.push(task)
+                    }
+                })
+
+                return high.concat(medium.concat(common))
+            };
+            default: {
+                return sortedTasks
+            }
         }   
     }
 
@@ -43,7 +64,7 @@ export default function TaskList (props) {
         return true
     })
 
-    const sortedFilteredTasks = sortTasks(filteredTasks)
+    const sortedFilteredTasks = sortTasks(filteredTasks, sortingValue)
 
     return (
 

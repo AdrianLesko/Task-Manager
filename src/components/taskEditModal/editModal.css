@@ -63,6 +63,14 @@
             padding-right: 70px;
         }
 
+        .priority-container {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-right: 70px;
+            align-items: center;
+        }
+
         input {
             border: none;
             appearance: none;

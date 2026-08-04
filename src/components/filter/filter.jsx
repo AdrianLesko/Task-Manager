@@ -36,7 +36,7 @@ export default function Filter ({filterValue, handleFilterChange, sortingValue, 
                 >   
                     <option value='latest'>Latest</option>
                     <option value='completed-first'>Completed first</option>
-                    <option vlaue='priority'>Priority</option>
+                    <option value='priority'>Priority</option>
                 </select> 
             </div>
         </div>

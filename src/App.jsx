@@ -18,7 +18,7 @@ function App() {
   const [filterValue, setFilterValue] = useState('all')
   const handleFilterChange = (value) => {
     setFilterValue(value)
-    console.log(value)
+   
   }
 
   //sort

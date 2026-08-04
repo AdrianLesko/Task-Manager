@@ -1,1 +1,11 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+@theme {
+    --color-primary: #333333;
+    --color-primary-b: #19191967;
+    --color-secondary: #B2EBD4;
+}
+
+body {
+    @apply accent-secondary
+}

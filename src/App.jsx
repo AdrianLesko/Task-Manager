@@ -47,8 +47,8 @@ function App() {
 
   return (
     <div id='app'>
-      <div className='title-container'>
-        <h1 className='title'>Task Manager v01</h1>
+      <div className='flex flex-row justify-center bg-primary-b py-2'>
+        <h1 className='font-extrabold text-white text-2xl'>Task Manager v01</h1>
       </div>
       <div className='main-container'>
   

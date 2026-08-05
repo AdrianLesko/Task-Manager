@@ -10,7 +10,7 @@ function TaskItem ({task, toggleTask, deleteTask, editTask}) {
                 <div className=''>
                     <input className='hover:cursor-pointer' type='checkbox' checked={task.completed} onChange={() => toggleTask(task)}/>
                 </div>
-                <div className='flex flex-col items-start justify-center'>
+                <div className='flex flex-col items-start justify-center py-2'>
                     <h2 className='font-extrabold text-xl text-primary'>{task.title}</h2>
                     <p>{task.description}</p>
                 </div>

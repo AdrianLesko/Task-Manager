@@ -25,24 +25,46 @@ export default function TaskForm (props) {
     }
 
     return (
-        <div className='component'>
-            <form onSubmit={handleSubmit}>
-                <h2 className='add-task-title'>Add New Task</h2>
-                <label className='input-box'>
-                    <input type='text' value={currentVal} onChange={(e) => setVal(e.target.value)} required/>
-                    <span className='placeholder'>Enter Title</span>
+        <div className='h-full'>
+            <form onSubmit={handleSubmit}
+                className='h-full flex flex-col gap-3 items-center'>
+                <h2 className='w-full text-center bg-secondary rounded-lg py-1 text-white font-bold text-xl'>Add New Task</h2>
+                <label className='relative'>
+                    <input 
+                        type='text' 
+                        value={currentVal} 
+                        onChange={(e) => setVal(e.target.value)} 
+                        required
+                        className='border-3 border-secondary rounded-lg focus:bg-secondary'
+                        />
+                    <span className='absolute top-0 left-0 translate-x-12 translate-y-px text-secondary font-mono'>Enter Title</span>
                 </label>
-                <label className='input-box'>
-                    <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} required/>
-                    <span className='placeholder'>Enter Description</span>
+                <label className='relative'>
+                    <input 
+                        type='text' 
+                        value={description} 
+                        onChange={(e) => setDescription(e.target.value)} 
+                        required
+                        className='border-3 border-secondary rounded-lg'
+                    />
+                    <span className='absolute top-0 left-0 translate-x-4 translate-y-px text-secondary font-mono'>Enter Description</span>
                 </label>
-                <label htmlFor='add-select'>Select Priority</label>
-                <select id='add-select' value={priority} onChange={(e) => setPriority(e.target.value)}>
+                <label htmlFor='add-select'
+                    className='text-secondary font-bold'>Select Priority</label>
+                <select 
+                    id='add-select' 
+                    value={priority} 
+                    onChange={(e) => setPriority(e.target.value)}
+                    className='border-3 text-secondary border-secondary w-54'
+                >
                     <option value='common'>Common</option>
                     <option value='medium'>Medium</option>
                     <option value='high'>High</option>
                 </select>
-              <button type='submit'>Add task</button>
+              <button 
+                type='submit'
+                className='border-3 border-secondary w-30 rounded-lg font-bold text-secondary hover:bg-secondary hover:text-black'
+                >Add task</button>
             </form>
         </div>
     )

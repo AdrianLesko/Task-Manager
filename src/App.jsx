@@ -76,7 +76,7 @@ function App() {
           />
         </div>
       </div>
-      <div id='edit-task-modal'>
+      <div id='edit-task-modal' className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
         <EditModal 
           taskToEdit={taskToEdit}
           isModalOpen={isModalOpen}
